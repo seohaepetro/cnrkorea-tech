@@ -3,260 +3,322 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CNR Korea | Integrated Waste-Energy-Water System</title>
-  <meta name="description" content="Integrated workflow: waste → energy/heat → desalination → reuse, with emissions reduction and circular resource recovery." />
- <link rel="stylesheet" href="./style.css" />
+  <title>CNR Korea | Waste-to-Energy, Water & Environmental Solutions</title>
+  <meta name="description" content="Integrated solutions that convert waste into energy and water, reduce emissions, and enable circular resource systems for cities and industrial zones." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
-<body id="top">
+<body>
   <header class="topbar">
     <div class="container topbar-inner">
       <a class="brand" href="#top" aria-label="CNR Korea">
         <span class="brand-mark">CNR</span>
         <span class="brand-text">CNR Korea</span>
       </a>
-
       <nav class="nav">
-        <a href="#system-flow">System Flow</a>
+        <a href="#why">Why Us</a>
+        <a href="#portfolio">Technologies</a>
+        <a href="#xprize">XPRIZE</a>
+        <a href="#applications">Applications</a>
         <a href="#contact" class="btn btn-sm">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main class="container">
+  <main id="top">
+    <!-- HERO -->
     <section class="hero">
-      <h1>System Flow</h1>
-      <p class="lead">
-        Integrated workflow that converts waste into useful energy and water,
-        enabling desalination, wastewater purification, and practical reuse—while reducing emissions.
-      </p>
+      <div class="container hero-inner">
+        <p class="kicker">Integrated Environmental Infrastructure</p>
+        <h1>From Waste to Energy, Water, and the Future</h1>
+        <p class="subhead">
+          CNR Korea develops modular, field-deployable systems that integrate waste treatment,
+          high-efficiency combustion, thermal recovery, desalination, and water reuse—designed for
+          industrial zones, coastal regions, islands, and next-generation city development.
+        </p>
+
+        <div class="cta">
+          <a class="btn" href="#portfolio">Explore Technologies</a>
+          <a class="btn btn-ghost" href="#contact">Partnership Inquiry</a>
+        </div>
+
+        <div class="hero-metrics">
+          <div class="metric">
+            <div class="metric-k">Integrated Platform</div>
+            <div class="metric-v">Waste + Energy + Water</div>
+          </div>
+          <div class="metric">
+            <div class="metric-k">Deployment Model</div>
+            <div class="metric-v">Modular / Scalable</div>
+          </div>
+          <div class="metric">
+            <div class="metric-k">Core Outcome</div>
+            <div class="metric-v">Emission Reduction + Resource Circularity</div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- SYSTEM FLOW -->
-    <section id="system-flow" class="section">
-      <div class="section-head">
-        <h2>Integrated Workflow Overview</h2>
-        <p class="muted">
-          Waste → Complete combustion → Heat recovery → Turbine power → Electricity supply → Desalination → Wastewater treatment → Water reuse → Emission reduction → Circular system.
+    <!-- WHY -->
+    <section id="why" class="section">
+      <div class="container">
+        <h2>Why CNR Korea</h2>
+        <p class="section-lead">
+          We focus on integrated engineering—combining proven industrial processes with practical deployment design.
+          Our approach emphasizes operational safety, compliance, and measurable outputs.
         </p>
-      </div>
 
-      <!-- A) SVG flow diagram (always works; no external images required) -->
-      <div class="card">
-        <div class="card-title">Overview diagram (SVG)</div>
-
-        <div class="svg-wrap" role="img" aria-label="Integrated system overview diagram">
-          <svg viewBox="0 0 1200 360" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
-                <path d="M0,0 L12,6 L0,12 Z" />
-              </marker>
-            </defs>
-
-            <!-- nodes -->
-            <g class="node">
-              <rect x="40"  y="70"  width="200" height="64" rx="14"/>
-              <text x="140" y="108" text-anchor="middle">Waste Input</text>
-            </g>
-
-            <g class="node">
-              <rect x="280" y="70"  width="240" height="64" rx="14"/>
-              <text x="400" y="108" text-anchor="middle">Complete Combustion</text>
-            </g>
-
-            <g class="node">
-              <rect x="560" y="70"  width="240" height="64" rx="14"/>
-              <text x="680" y="108" text-anchor="middle">Thermal Recovery</text>
-            </g>
-
-            <g class="node">
-              <rect x="840" y="70"  width="240" height="64" rx="14"/>
-              <text x="960" y="108" text-anchor="middle">Turbine Power</text>
-            </g>
-
-            <g class="node">
-              <rect x="280" y="190" width="240" height="64" rx="14"/>
-              <text x="400" y="228" text-anchor="middle">Electricity Supply</text>
-            </g>
-
-            <g class="node">
-              <rect x="560" y="190" width="240" height="64" rx="14"/>
-              <text x="680" y="228" text-anchor="middle">Seawater Desalination</text>
-            </g>
-
-            <g class="node">
-              <rect x="840" y="190" width="240" height="64" rx="14"/>
-              <text x="960" y="228" text-anchor="middle">Wastewater Treatment</text>
-            </g>
-
-            <g class="node">
-              <rect x="40"  y="190" width="200" height="64" rx="14"/>
-              <text x="140" y="228" text-anchor="middle">Water Reuse</text>
-            </g>
-
-            <g class="node node-accent">
-              <rect x="40"  y="290" width="520" height="56" rx="14"/>
-              <text x="300" y="325" text-anchor="middle">Emission &amp; Particulate Reduction</text>
-            </g>
-
-            <g class="node node-accent">
-              <rect x="600" y="290" width="480" height="56" rx="14"/>
-              <text x="840" y="325" text-anchor="middle">Fully Integrated Circular System</text>
-            </g>
-
-            <!-- arrows (top row) -->
-            <g class="arrow">
-              <line x1="240" y1="102" x2="280" y2="102" marker-end="url(#arrow)"/>
-              <line x1="520" y1="102" x2="560" y2="102" marker-end="url(#arrow)"/>
-              <line x1="800" y1="102" x2="840" y2="102" marker-end="url(#arrow)"/>
-            </g>
-
-            <!-- arrows (down links) -->
-            <g class="arrow">
-              <line x1="960" y1="134" x2="960" y2="190" marker-end="url(#arrow)"/>
-              <line x1="680" y1="134" x2="680" y2="190" marker-end="url(#arrow)"/>
-              <line x1="400" y1="134" x2="400" y2="190" marker-end="url(#arrow)"/>
-            </g>
-
-            <!-- arrows (bottom row, right to left for reuse loop) -->
-            <g class="arrow">
-              <line x1="840" y1="222" x2="240" y2="222" marker-end="url(#arrow)"/>
-            </g>
-          </svg>
-        </div>
-
-        <div class="note">
-          This diagram is embedded as SVG, so it always renders even when image files are missing.
-          You can later replace/augment with PNG icons under <code>assets/images/</code>.
+        <div class="grid cards">
+          <article class="card">
+            <h3>Integrated Environmental Solutions</h3>
+            <p>A unified platform integrating waste treatment, complete combustion, desalination, power generation, and water reuse.</p>
+          </article>
+          <article class="card">
+            <h3>Future-Oriented Infrastructure</h3>
+            <p>Designed to reduce carbon emissions and particulate matter while enabling circular resource systems.</p>
+          </article>
+          <article class="card">
+            <h3>Non-Selective Waste Processing</h3>
+            <p>Handles diverse waste streams with simplified front-end requirements, leaving recyclable inorganic residues.</p>
+          </article>
+          <article class="card">
+            <h3>Energy + Water Co-Production</h3>
+            <p>Recovers thermal energy for desalination and process water production alongside power generation.</p>
+          </article>
+          <article class="card">
+            <h3>Modular Scalability</h3>
+            <p>Suitable for smart cities, industrial parks, coastal/island regions, and post-disaster reconstruction.</p>
+          </article>
+          <article class="card">
+            <h3>Commercial Deployment Readiness</h3>
+            <p>Engineered for field operations—maintainability, safety, and cost-aware scale-up.</p>
+          </article>
         </div>
       </div>
+    </section>
 
-      <!-- B) Step list (icons optional; no broken images even if missing) -->
-      <div class="grid-2">
-        <div class="card">
-          <div class="card-title">Step-by-step modules</div>
+    <!-- TECHNOLOGIES -->
+    <section id="portfolio" class="section section-alt">
+      <div class="container">
+        <h2>Technology Portfolio</h2>
+        <p class="section-lead">
+          Core technologies can operate independently or be combined into an integrated facility-level solution.
+        </p>
 
-          <div class="flow-list">
-            <div class="flow-item">
-              <div class="icon" aria-hidden="true">
-                <img src="assets/images/incineration.png" alt="" loading="lazy" onerror="this.remove()" />
-              </div>
-              <div>
-                <div class="flow-title">Complete combustion incineration</div>
-                <div class="flow-desc">Complete combustion incineration of mixed waste</div>
-              </div>
+        <div class="grid cards">
+          <article class="card">
+            <h3>Multi-Stage Compressed Dual-Flow Turbine Generator</h3>
+            <p>High-efficiency turbine concept applicable to wind, in-stream/tidal flow, and thermal steam energy systems.</p>
+          </article>
+          <article class="card">
+            <h3>Complete Combustion Incinerator (CCI)</h3>
+            <p>Enhanced combustion completeness for waste-to-energy, supporting cleaner operation and heat recovery.</p>
+          </article>
+          <article class="card">
+            <h3>Carbon & Particulate Reduction System</h3>
+            <p>Integrated measures to reduce emissions and fine particulates while improving overall process efficiency.</p>
+          </article>
+          <article class="card">
+            <h3>Soil & Marine Pollution Remediation</h3>
+            <p>Solutions for oil-contaminated soil and marine environments using high-efficiency treatment and restoration workflows.</p>
+          </article>
+          <article class="card">
+            <h3>Non-Entry Oil Tank Cleaning (Hot-Water Recycling)</h3>
+            <p>Improves safety by minimizing confined-space entry, using a hot-water recycling approach for industrial-scale tanks.</p>
+          </article>
+          <article class="card">
+            <h3>Gravity-Driven Natural Filtration Tower (Desalination)</h3>
+            <p>Multi-layer, gravity-driven desalination/purification concept with modular deployment for water security.</p>
+          </article>
+        </div>
+
+        <!-- Featured Technology: Mobility Turbine (Detailed) -->
+        <div class="tech-detail" id="tech-wind-mobility">
+          <div class="section-head">
+            <h2>Multi-Stage Compressed Dual-Flow Wind Turbine Generator</h2>
+            <p class="muted">
+              Wind energy scales with the cube of wind speed. This system captures frontal airflow for centrifugal
+              power generation and uses controlled exhaust to minimize drag. A single central turbine with
+              symmetrically positioned side generators supports stable operation across mobility and infrastructure
+              applications.
+            </p>
+          </div>
+
+          <div class="media-card">
+            <img
+              src="assets/tech-wind-mobility.png"
+              alt="Multi-Stage Compressed Dual-Flow Wind Turbine Generator for mobility applications"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="callout-grid">
+            <div class="callout">
+              <h3>Applications</h3>
+              <p>Passenger vehicles, buses, trucks, ships, rail systems, and aviation concepts.</p>
             </div>
-
-            <div class="flow-item">
-              <div class="icon" aria-hidden="true">
-                <img src="assets/images/thermal-recovery.png" alt="" loading="lazy" onerror="this.remove()" />
-              </div>
-              <div>
-                <div class="flow-title">Thermal energy recovery</div>
-                <div class="flow-desc">Recovered heat and steam generation for power and water systems</div>
-              </div>
+            <div class="callout">
+              <h3>Design Intent</h3>
+              <p>Convert relative airflow into usable electricity while reducing resistance through controlled exhaust.</p>
             </div>
-
-            <div class="flow-item">
-              <div class="icon" aria-hidden="true">
-                <img src="assets/images/turbine.png" alt="" loading="lazy" onerror="this.remove()" />
-              </div>
-              <div>
-                <div class="flow-title">Multi-stage turbine power generation</div>
-                <div class="flow-desc">Electricity generation using recovered thermal energy</div>
-              </div>
-            </div>
-
-            <div class="flow-item">
-              <div class="icon" aria-hidden="true">
-                <img src="assets/images/electricity.png" alt="" loading="lazy" onerror="this.remove()" />
-              </div>
-              <div>
-                <div class="flow-title">Electricity supply</div>
-                <div class="flow-desc">Supply to city, industrial complex, or critical infrastructure</div>
-              </div>
-            </div>
-
-            <div class="flow-item">
-              <div class="icon" aria-hidden="true">
-                <img src="assets/images/desalination.png" alt="" loading="lazy" onerror="this.remove()" />
-              </div>
-              <div>
-                <div class="flow-title">Seawater desalination</div>
-                <div class="flow-desc">Desalination using recovered thermal energy</div>
-              </div>
-            </div>
-
-            <div class="flow-item">
-              <div class="icon" aria-hidden="true">
-                <img src="assets/images/wastewater.png" alt="" loading="lazy" onerror="this.remove()" />
-              </div>
-              <div>
-                <div class="flow-title">Wastewater treatment</div>
-                <div class="flow-desc">Wastewater treatment and purification</div>
-              </div>
-            </div>
-
-            <div class="flow-item">
-              <div class="icon" aria-hidden="true">
-                <img src="assets/images/reuse.png" alt="" loading="lazy" onerror="this.remove()" />
-              </div>
-              <div>
-                <div class="flow-title">Water reuse system</div>
-                <div class="flow-desc">Treated water reuse for industrial and municipal applications</div>
-              </div>
-            </div>
-
-            <div class="flow-item">
-              <div class="icon" aria-hidden="true">
-                <img src="assets/images/emission-reduction.png" alt="" loading="lazy" onerror="this.remove()" />
-              </div>
-              <div>
-                <div class="flow-title">Emission reduction system</div>
-                <div class="flow-desc">Carbon and particulate emission reduction</div>
-              </div>
-            </div>
-
-            <div class="flow-item">
-              <div class="icon" aria-hidden="true">
-                <img src="assets/images/flow-overview.png" alt="" loading="lazy" onerror="this.remove()" />
-              </div>
-              <div>
-                <div class="flow-title">Total circular system</div>
-                <div class="flow-desc">Fully integrated circular energy–water–environment system</div>
-              </div>
+            <div class="callout">
+              <h3>Integration</h3>
+              <p>Pairs with storage and microgrid systems for charging, resilience, and off-grid operation.</p>
             </div>
           </div>
         </div>
 
-        <div class="card">
-          <div class="card-title">Key outcomes</div>
-          <ul class="bullets">
-            <li>Reduces landfill reliance by converting mixed waste into useful energy.</li>
-            <li>Reuses recovered heat for desalination and industrial water production.</li>
-            <li>Enables wastewater purification and treated-water reuse at scale.</li>
-            <li>Integrates emission reduction to support low-carbon infrastructure.</li>
-            <li>Designed for modular deployment (cities, islands, industrial zones, reconstruction).</li>
-          </ul>
+      </div>
+    </section>
+
+    <!-- XPRIZE -->
+    <section id="xprize" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Seawater Desalination Using a Gravity-Driven Natural Filtration Tower</h2>
+          <p class="muted">
+            XPRIZE Water Scarcity Competition – Track B Qualified Team.
+            A gravity-driven, multi-layer filtration approach designed for field deployment in coastal and island regions.
+          </p>
+        </div>
+
+        <div class="media-card">
+          <img
+            src="assets/xprize-tower.png"
+            alt="Seawater Desalination System Using a Gravity-Driven Natural Filtration Tower (XPRIZE Track B Qualified Team)"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="callout-grid">
+          <div class="callout">
+            <h3>Core Principle</h3>
+            <p>
+              Seawater is converted into freshwater by passing through engineered material layers that absorb salinity.
+              The layers are regenerated through periodic washing for repeated use.
+            </p>
+          </div>
+          <div class="callout">
+            <h3>Deployment Fit</h3>
+            <p>
+              Modular design for industrial zones, coastal regions, islands, and rapid-deployment infrastructure projects.
+            </p>
+          </div>
+          <div class="callout">
+            <h3>Collaboration</h3>
+            <p>
+              We welcome partners for pilots, materials supply, fabrication, and site deployment planning.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- APPLICATIONS -->
+    <section id="applications" class="section">
+      <div class="container">
+        <h2>Applications</h2>
+        <p class="section-lead">
+          Designed for projects where energy, water, and environmental compliance must be delivered together.
+        </p>
+
+        <div class="grid bullets">
+          <div class="bullet"><strong>Thermal Power Plants</strong><br/>Waste heat recovery → power support + desalination</div>
+          <div class="bullet"><strong>Incineration Facilities</strong><br/>Waste-to-energy + water production + emission control</div>
+          <div class="bullet"><strong>Wastewater Treatment</strong><br/>Treatment + reuse + energy integration</div>
+          <div class="bullet"><strong>Coastal & Island Regions</strong><br/>Freshwater security + decarbonization infrastructure</div>
+          <div class="bullet"><strong>Industrial Zones</strong><br/>Resource circularity + compliance-driven upgrades</div>
+          <div class="bullet"><strong>New Cities / Reconstruction</strong><br/>Modular integrated infrastructure for rapid deployment</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SYSTEM FLOW (placeholder) -->
+    <section class="section section-alt">
+      <div class="container">
+        <h2>System Flow</h2>
+        <p class="section-lead">
+          Insert an overview diagram to explain the integrated workflow (waste → energy/heat → desalination → reuse).
+        </p>
+
+        <!-- Upload an image to /assets (e.g., assets/diagram.png), then uncomment below -->
+        <!-- <img class="diagram" src="assets/diagram.png" alt="Integrated system flow diagram" /> -->
+
+        <div class="placeholder">
+          Upload a diagram image to <code>/assets</code> (e.g., <code>diagram.png</code>) and enable it here.
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact" class="section">
-      <div class="card">
-        <div class="card-title">Contact</div>
-        <p class="muted">If you would like to discuss deployment, partnerships, or pilot projects, please contact us.</p>
-        <div class="contact-row">
-          <a class="btn" href="mailto:info@cnrkorea.example">Email</a>
-          <a class="btn btn-ghost" href="#top">Back to top</a>
+      <div class="container">
+        <h2>Contact & Collaboration</h2>
+        <p class="section-lead">
+          We welcome forward-thinking partners—municipalities, operators, EPCs, and investors—interested in advancing
+          integrated environmental infrastructure projects.
+        </p>
+
+        <div class="contact-card">
+          <div>
+            <div class="label">Organization</div>
+            <div class="value">CNR Korea</div>
+          </div>
+          <div>
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:sonsg0549@gmail.com">sonsg0549@gmail.com</a></div>
+          </div>
+          <div>
+            <div class="label">Phone</div>
+            <div class="value">+82-10-3737-0549</div>
+          </div>
         </div>
-        <p class="note">Replace the email address with your actual contact.</p>
+
+        <div class="note">
+          If you share a project brief (location, capacity, waste/water conditions, timeline), we can respond with a practical
+          deployment concept and configuration options.
+        </div>
       </div>
     </section>
 
-    <footer class="footer">
-      <div class="muted">© CNR Korea. All rights reserved.</div>
-    </footer>
   </main>
+
+  <!-- CLOSING -->
+  <section id="collaboration" class="closing">
+    <div class="container closing-inner">
+      <div class="closing-copy">
+        <h2>Collaborate with CNR Korea</h2>
+        <ul>
+          <li>Some of our technologies are fully developed, while others are still under development.</li>
+          <li>We welcome collaborators who share our mission to improve global environmental outcomes.</li>
+          <li>Please feel free to contact us at any time. Thank you.</li>
+        </ul>
+
+        <div class="closing-cta">
+          <a class="btn" href="#contact">Contact</a>
+          <a class="btn btn-ghost" href="#portfolio">Explore Technologies</a>
+        </div>
+      </div>
+
+      <div class="closing-media">
+        <img
+          src="assets/cnr-closing.png"
+          alt="CNR Korea closing slide"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="y"></span> CNR Korea. All rights reserved.</div>
+      <div class="muted">Waste-to-Energy • Water Security • Circular Infrastructure</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
