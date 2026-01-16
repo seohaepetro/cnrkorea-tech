@@ -1,3 +1,4 @@
+<style>
 :root{
   --bg:#070a12;
   --panel:#0d1324;
@@ -132,3 +133,4 @@ svg .node text{fill: #eaf0ff; font-size:18px; font-weight:650}
 svg .node-accent rect{fill: rgba(122,167,255,.12); stroke: rgba(122,167,255,.40)}
 svg .arrow line{stroke: rgba(255,255,255,.40); stroke-width:2}
 svg marker path{fill: rgba(255,255,255,.55)}
+</style>
