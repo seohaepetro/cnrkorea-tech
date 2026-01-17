@@ -3,195 +3,605 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CNR Korea | Air · Water · Circular Environment</title>
-  <meta name="description" content="40+ years of field-proven air and water environmental technologies, scalable as national and city-level infrastructure programs." />
-  <link rel="stylesheet" href="style.css" />
+
+  <title>CNR Korea | Integrated Water–Energy–Environment Solutions</title>
+  <meta name="description" content="CNR Korea develops integrated environmental infrastructure solutions: waste-to-energy incineration heat & waste-heat recovery, seawater desalination, wastewater reclamation and reuse, and resilient systems for cities and coastal regions." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CNR Korea | Integrated Water–Energy–Environment Solutions" />
+  <meta property="og:description" content="Incineration heat & waste-heat recovery + desalination + reclaimed wastewater reuse. Open collaboration for a brighter future." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#0b0f14;
+      --panel:#111826;
+      --panel2:#0f1724;
+      --text:#e8eef7;
+      --muted:#b7c3d6;
+      --line:rgba(255,255,255,.10);
+      --accent:#7dd3fc;
+      --accent2:#34d399;
+      --shadow: 0 16px 60px rgba(0,0,0,.45);
+      --radius: 16px;
+      --radius2: 22px;
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(125,211,252,.18), transparent 60%),
+        radial-gradient(900px 500px at 90% 10%, rgba(52,211,153,.14), transparent 55%),
+        linear-gradient(180deg, #070a0f 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    a{color:inherit; text-decoration:none}
+    a:hover{opacity:.92}
+    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto}
+    .topbar{
+      position:sticky; top:0; z-index:50;
+      background: rgba(8,12,18,.72);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 12px 0;
+      gap: 16px;
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px;
+      font-weight: 700;
+      letter-spacing: .2px;
+      white-space: nowrap;
+    }
+    .brand-mark{
+      width: 40px; height: 40px;
+      display:grid; place-items:center;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(125,211,252,.18), rgba(52,211,153,.16));
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      font-weight: 800;
+    }
+    .brand-sub{color:var(--muted); font-weight:600; font-size: 12px; margin-left:4px}
+
+    .nav{display:flex; align-items:center; gap: 14px; flex-wrap:wrap; justify-content:flex-end}
+    .nav a{
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 13px;
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+    .nav a:hover{background: rgba(255,255,255,.06); color: var(--text)}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 750;
+      font-size: 13px;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{background: rgba(255,255,255,.10)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(125,211,252,.22), rgba(52,211,153,.18));
+      border-color: rgba(255,255,255,.18);
+    }
+
+    main{padding: 28px 0 70px}
+    .hero{
+      display:grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 22px;
+      align-items: start;
+      margin-top: 10px;
+    }
+    @media (max-width: 980px){
+      .hero{grid-template-columns: 1fr; gap: 16px}
+      .nav{display:none}
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+    }
+    .card.pad{padding: 22px}
+    .kicker{
+      display:inline-flex; gap: 10px; align-items:center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.05);
+      color: var(--muted);
+      font-weight: 650;
+      font-size: 12px;
+      margin-bottom: 12px;
+    }
+    .dot{
+      width: 7px; height:7px; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(125,211,252,.10);
+    }
+    h1{margin: 0 0 10px; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12}
+    .lead{margin:0 0 14px; color: var(--muted); font-size: 15.5px}
+    .hero-cta{display:flex; flex-wrap:wrap; gap: 10px; margin-top: 16px}
+
+    .mini{
+      display:flex; gap: 10px; flex-wrap:wrap;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+    .pill{
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+    }
+
+    .figure{
+      overflow:hidden;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.20);
+    }
+    .figure img{
+      width: 100%;
+      height: auto;
+      display:block;
+    }
+    .figure-cap{
+      padding: 12px 14px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12.5px;
+      display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap;
+    }
+
+    section{margin-top: 18px}
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 980px){ .grid-3{grid-template-columns: 1fr} }
+
+    .tile{
+      padding: 16px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      min-height: 120px;
+    }
+    .tile h3{margin:0 0 6px; font-size: 15px}
+    .tile p{margin:0; color: var(--muted); font-size: 13px}
+
+    .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap: 14px;
+      margin: 18px 0 10px;
+    }
+    .section-head h2{margin:0; font-size: 18px}
+    .section-head p{margin:0; color: var(--muted); font-size: 13px}
+
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    @media (max-width: 980px){ .gallery{grid-template-columns: repeat(2, 1fr)} }
+
+    .thumb{
+      border-radius: 14px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      cursor:pointer;
+      position:relative;
+      aspect-ratio: 4 / 3;
+      display:grid;
+      place-items:center;
+    }
+    .thumb img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+    }
+    .thumb span{
+      position:absolute; left: 10px; top: 10px;
+      font-size: 12px; font-weight: 750;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.45);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+
+    .cta{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+    @media (max-width: 980px){ .cta{grid-template-columns: 1fr} }
+    .cta .card.pad{display:flex; flex-direction:column; justify-content:space-between; gap: 12px}
+    .note{
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    footer{
+      margin-top: 26px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12.5px;
+      display:flex; justify-content:space-between; gap: 12px; flex-wrap:wrap;
+    }
+
+    /* Lightbox */
+    .lightbox{
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.78);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 20px;
+      z-index: 1000;
+    }
+    .lightbox.open{display:flex}
+    .lb-inner{
+      width: min(1100px, 100%);
+      border-radius: 18px;
+      overflow:hidden;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(10,14,20,.92);
+      box-shadow: var(--shadow);
+    }
+    .lb-top{
+      display:flex; justify-content:space-between; align-items:center;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+    .lb-actions{display:flex; gap: 8px}
+    .lb-btn{
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight: 750;
+      font-size: 12.5px;
+      cursor:pointer;
+    }
+    .lb-btn:hover{background: rgba(255,255,255,.10)}
+    .lb-img{background: rgba(0,0,0,.18)}
+    .lb-img img{width:100%; height:auto; display:block}
+    .sr-only{position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0}
+  </style>
 </head>
 
-<body id="top">
-  <header class="topbar">
-    <div class="wrap bar">
+<body>
+  <header class="topbar" id="top">
+    <div class="container topbar-inner">
       <a class="brand" href="#top" aria-label="CNR Korea">
-        <span class="mark">CNR</span><span class="name">CNR Korea</span>
+        <span class="brand-mark">CNR</span>
+        <span>
+          <span style="display:block; line-height:1.05">CNR Korea</span>
+          <span class="brand-sub">Jeju, Republic of Korea</span>
+        </span>
       </a>
 
-      <nav class="nav">
-        <a href="#tech">Technologies</a>
-        <a href="#programs">Programs</a>
-        <a class="btn btn-sm" href="#contact">Contact</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#solutions">Solutions</a>
+        <a href="#diagrams">Diagrams</a>
+        <a href="#collaboration">Collaboration</a>
+        <a href="#contact" class="btn">Contact</a>
       </nav>
+
+      <a class="btn primary" href="#contact">Collaborate</a>
     </div>
   </header>
 
-  <main class="wrap">
+  <main class="container">
     <!-- HERO -->
     <section class="hero">
-      <p class="kicker">Air · Water · Energy · Reuse</p>
-      <h1>
-        40+ years of environmental engineering,<br />
-        scaled for national programs worldwide.
-      </h1>
-      <p class="lead">
-        We develop and deploy integrated, practical solutions for air and water sustainability—designed
-        for real sites and scalable across cities and countries.
-      </p>
+      <div class="card pad">
+        <div class="kicker"><span class="dot"></span><span>Integrated Water–Energy–Environment Platform</span></div>
+        <h1>Recovering Heat. Reusing Water. Generating Power.</h1>
+        <p class="lead">
+          CNR Korea develops integrated environmental infrastructure that converts waste heat into usable energy,
+          enables seawater desalination, and reuses treated wastewater—supporting resilient cities, industrial zones,
+          islands, and coastal regions.
+        </p>
 
-      <div class="cta">
-        <a class="btn" href="#contact">National Program / Partnership Inquiry</a>
-        <a class="btn btn-ghost" href="#tech">View Core Technologies</a>
+        <div class="hero-cta">
+          <a class="btn primary"
+             href="mailto:sonsg0549@gmail.com?subject=CNR%20Korea%20Technology%20Collaboration%20Inquiry&body=Name:%0AOrganization:%0AInterest%20Area:%0ACollaboration%20Type%20(Use/License/Co-development/Pilot):%0ALocation:%0A">
+            Contact for Collaboration
+          </a>
+          <a class="btn" href="#diagrams">View Diagrams</a>
+        </div>
+
+        <div class="mini" aria-label="Key themes">
+          <span class="pill">Incineration heat & waste-heat recovery</span>
+          <span class="pill">Seawater desalination</span>
+          <span class="pill">Reclaimed wastewater reuse</span>
+          <span class="pill">Modular, scalable deployment</span>
+        </div>
       </div>
 
-      <div class="pillrow">
-        <span class="pill">Multi-Stage Dual-Flow Turbine</span>
-        <span class="pill">Waste → Energy + Desalinated Water (CCI)</span>
-        <span class="pill">Water Recycling & Reuse</span>
-      </div>
-    </section>
-
-    <!-- TECHNOLOGIES -->
-    <section id="tech" class="section">
-      <h2>Technologies</h2>
-      <p class="sub">
-        Core technologies summarized from the deck (minimum set, infrastructure-ready).
-      </p>
-
-      <div class="grid">
-        <article class="card">
-          <h3>Multi-Stage Compressed Dual-Flow Wind Turbine Generator</h3>
-          <p class="muted">
-            Captures frontal airflow for centrifugal generation and controls exhaust to minimize drag.
-            Single central turbine with symmetrically positioned side generators for stable, tip-free operation.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>All-Purpose Turbine Generator</h3>
-          <p class="muted">
-            Applicable to wind, in-stream hydropower, tidal energy, and thermal steam systems—enabling
-            simultaneous power generation, seawater desalination, waste-heat utilization, and wastewater treatment with water reuse.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Complete Combustion Incinerator (CCI)</h3>
-          <p class="muted">
-            Processes all waste types without separation at temperatures above 2,500°C. After combustion,
-            only inorganic residues (iron, glass, stone) remain for recycling, while generating electricity and desalinated freshwater from seawater.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Future-Oriented Carbon Emission Reduction System</h3>
-          <p class="muted">
-            Low and wide stack design to enhance particulate matter removal. After fine dust removal,
-            CO₂ is captured and reused by diluting with water (carbonated water), depending on application needs (e.g., agricultural water management).
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Soil & Marine Pollution Remediation</h3>
-          <p class="muted">
-            Remediation of large-scale soil and marine contamination using equipment-operated hot-water
-            circulation systems without direct human involvement.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Non-Entry Crude Oil Storage Tank Cleaning</h3>
-          <p class="muted">
-            Automated, non-entry tank cleaning using a hot-water recycling system—eliminating human access
-            to confined spaces and avoiding robotic equipment.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Gravity-Driven Natural Filtration Tower Desalination</h3>
-          <p class="muted">
-            Seawater is converted into freshwater by passing through an engineered material layer that absorbs salinity.
-            The layer is regenerated through periodic washing for repeated use.
-            <span class="tag">(XPRIZE Water Scarcity Competition – Track B Qualified Team)</span>
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Water Recycling & Reuse System</h3>
-          <p class="muted">
-            Integrated wastewater treatment (WWTP) with reuse pathways: potable supply, industrial use,
-            and make-up water sourced from rivers, streams, and rainwater.
-          </p>
-        </article>
+      <div class="card">
+        <div class="figure">
+          <!-- Replace this image with your 대표 다이어그램/슬라이드 -->
+          <img src="assets/slide-01.png" alt="CNR Korea system overview diagram" />
+          <div class="figure-cap">
+            <span>System Overview (Diagram)</span>
+            <span>Click any slide below for full screen</span>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- PROGRAMS -->
-    <section id="programs" class="section">
-      <h2>Programs</h2>
-
-      <div class="grid two">
-        <article class="card">
-          <h3>New City / Industrial Complex Program</h3>
-          <p class="muted">
-            Post-war and post-disaster reconstruction and future-oriented new city development:
-            modular infrastructure combining waste management, power, desalination, and water reuse.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>River & Coastal Infrastructure Program</h3>
-          <p class="muted">
-            Deployable across rivers and coastal regions (e.g., large river systems) to integrate in-stream/tidal power
-            with wastewater treatment and water reuse, improving regional resilience.
-          </p>
-        </article>
+    <!-- SOLUTIONS -->
+    <section id="solutions">
+      <div class="section-head">
+        <h2>Core Solutions</h2>
+        <p>Designed as a unified, circular resource system.</p>
       </div>
 
-      <div class="note">
-        <strong>Technology Status</strong><br />
-        Some technologies are fully developed, while others are still under development.
-        We welcome partners willing to share and advance these technologies to improve the global environment.
+      <div class="grid-3">
+        <div class="tile">
+          <h3>Waste-to-Energy Heat Recovery</h3>
+          <p>Electricity generation and thermal utilization using incineration heat and recovered waste heat.</p>
+        </div>
+
+        <div class="tile">
+          <h3>Seawater Desalination</h3>
+          <p>Freshwater production integrated with recovered thermal energy and multi-stage process concepts.</p>
+        </div>
+
+        <div class="tile">
+          <h3>Wastewater Reclamation & Reuse</h3>
+          <p>Reusing treated sewage/wastewater as a reliable non-potable resource for cities and industry.</p>
+        </div>
+
+        <div class="tile">
+          <h3>Emission & Pollution Reduction</h3>
+          <p>Systems engineered to reduce particulate matter and environmental loads through integrated processing.</p>
+        </div>
+
+        <div class="tile">
+          <h3>Scalable Infrastructure for Coasts & Islands</h3>
+          <p>Modular deployment for Jeju-like island settings and coastal developments requiring resilience.</p>
+        </div>
+
+        <div class="tile">
+          <h3>Open Collaboration Model</h3>
+          <p>Structured for partnerships: pilot projects, licensing, joint development, and deployment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIAGRAMS -->
+    <section id="diagrams">
+      <div class="section-head">
+        <h2>Diagrams & Slides</h2>
+        <p>Place your PPT-exported images under <strong>assets/</strong> and keep the names as below.</p>
+      </div>
+
+      <div class="card pad">
+        <div class="gallery" id="gallery" aria-label="Slide gallery">
+          <!-- IMPORTANT:
+               Put your slide images in /assets/ with these names:
+               slide-01.png ... slide-17.png (or adjust the list in the script).
+          -->
+          <!-- Thumbnails are generated by JS for consistency -->
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLABORATION -->
+    <section id="collaboration" class="cta">
+      <div class="card pad">
+        <div>
+          <div class="kicker"><span class="dot"></span><span>Open Collaboration</span></div>
+          <h2 style="margin:0 0 10px; font-size: 20px;">Shared Technology for a Shared Planet</h2>
+          <p class="note">
+            Some of our technologies are already fully developed, while others are still evolving.
+            We openly share this technology and welcome anyone who is committed to improving the global environment
+            and building a brighter future for our planet to join us.
+          </p>
+        </div>
+        <div class="hero-cta">
+          <a class="btn primary"
+             href="mailto:sonsg0549@gmail.com?subject=CNR%20Korea%20Collaboration%20Request&body=Name:%0AOrganization:%0AProject%20Goal:%0ARelevant%20Experience:%0AProposed%20Collaboration%20Type%20(Pilot/Co-development/License/Deployment):%0A">
+            Propose a Collaboration
+          </a>
+          <a class="btn" href="#contact">Contact Details</a>
+        </div>
+      </div>
+
+      <div class="card pad">
+        <h2 style="margin:0 0 8px; font-size: 18px;">Partnership Pathways</h2>
+        <p class="note" style="margin-bottom: 10px;">
+          Typical engagement models (tailored to each region and project context):
+        </p>
+        <div class="grid-3" style="grid-template-columns: 1fr; gap: 10px;">
+          <div class="tile">
+            <h3>Pilot & Demonstration</h3>
+            <p>Site selection, proof-of-performance, and operational validation for stakeholders.</p>
+          </div>
+          <div class="tile">
+            <h3>Co-Development</h3>
+            <p>Engineering refinement, localization, and joint deployment planning.</p>
+          </div>
+          <div class="tile">
+            <h3>Licensing & Deployment</h3>
+            <p>Structured licensing, manufacturing partners, and rollout programs.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="section contact">
-      <h2>Contact</h2>
-      <p class="sub">National programs, city infrastructure, pilots, licensing, and co-development inquiries.</p>
-
-      <div class="contactbox">
-        <div>
-          <div class="label">Email</div>
-          <a class="link"
-             href="mailto:cnrkorea-tech@cnrkorea.com?subject=%5BCNR%5D%20National%20Program%20%2F%20Partnership%20Inquiry&body=Country%2FCity%3A%0AProgram%20Type%3A%20(National%2FPPP%2FAid%2FPrivate)%0AInterested%20Technology%3A%0AScale%3A%20(Pilot%2FCommercial)%0ATimeline%3A%0AContact%3A%0A">
-            cnrkorea-tech@cnrkorea.com
-          </a>
-        </div>
-
-        <div class="actions">
-          <a class="btn"
-             href="mailto:cnrkorea-tech@cnrkorea.com?subject=%5BCNR%5D%20Pilot%20Request&body=Country%2FCity%3A%0ASite%20Conditions%3A%0ATarget%20Outcome%3A%0ARequired%20Capacity%3A%0ATimeline%3A%0A">
-            Request a Pilot
-          </a>
-          <a class="btn btn-ghost" href="#top">Top</a>
-        </div>
+    <section id="contact" style="margin-top: 18px;">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p>Jeju, Republic of Korea</p>
       </div>
 
-      <p class="fine">
-        We welcome forward-thinking partners to co-develop and deploy scalable environmental infrastructure worldwide.
-      </p>
+      <div class="card pad">
+        <p class="note" style="margin-top:0;">
+          For collaboration, pilots, licensing, co-development, or deployment discussions, please reach out by email.
+        </p>
+
+        <div class="mini" style="margin-top: 12px;">
+          <span class="pill">Email: <a href="mailto:sonsg0549@gmail.com">sonsg0549@gmail.com</a></span>
+          <span class="pill">Location: Jeju, Republic of Korea</span>
+          <span class="pill">GitHub Pages: cnrkorea-tech.github.io</span>
+        </div>
+
+        <div class="hero-cta" style="margin-top: 14px;">
+          <a class="btn primary"
+             href="mailto:sonsg0549@gmail.com?subject=CNR%20Korea%20Technology%20Collaboration%20Inquiry&body=Name:%0AOrganization:%0AInterest%20Area:%0AIntended%20Application:%0ALocation:%0AScale%20(Pilot/Commercial):%0ACollaboration%20Type%20(Use/License/Co-development):%0A">
+            Contact for This Technology
+          </a>
+          <a class="btn" href="#top">Back to Top</a>
+        </div>
+
+        <footer>
+          <span>© <span id="year"></span> CNR Korea. All rights reserved.</span>
+          <span>Open collaboration for environmental impact.</span>
+        </footer>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="wrap foot">
-      <div>© <span id="y"></span> CNR Korea</div>
-      <div class="links">
-        <a href="#tech">Technologies</a>
-        <a href="#programs">Programs</a>
-        <a href="#contact">Contact</a>
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lb-inner" role="dialog" aria-modal="true" aria-label="Slide viewer">
+      <div class="lb-top">
+        <span id="lbTitle">Slide</span>
+        <div class="lb-actions">
+          <button class="lb-btn" id="lbPrev" type="button">Prev</button>
+          <button class="lb-btn" id="lbNext" type="button">Next</button>
+          <button class="lb-btn" id="lbClose" type="button">Close</button>
+        </div>
+      </div>
+      <div class="lb-img">
+        <img id="lbImg" src="" alt="Slide image" />
       </div>
     </div>
-  </footer>
+  </div>
 
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script>
+    // ====== Configure your slide images here ======
+    // Put files in /assets/ named slide-01.png ... slide-17.png
+    const SLIDE_COUNT = 17;
+    const SLIDE_PREFIX = "assets/slide-";
+    const SLIDE_EXT = ".png";
+
+    // ====== Build gallery ======
+    const gallery = document.getElementById("gallery");
+    const slides = [];
+
+    function pad2(n){ return String(n).padStart(2, "0"); }
+
+    for(let i=1; i<=SLIDE_COUNT; i++){
+      const src = `${SLIDE_PREFIX}${pad2(i)}${SLIDE_EXT}`;
+      slides.push(src);
+
+      const btn = document.createElement("button");
+      btn.className = "thumb";
+      btn.type = "button";
+      btn.setAttribute("aria-label", `Open slide ${i}`);
+      btn.dataset.index = String(i-1);
+
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = `Slide ${i}`;
+
+      const badge = document.createElement("span");
+      badge.textContent = `Slide ${i}`;
+
+      btn.appendChild(img);
+      btn.appendChild(badge);
+      btn.addEventListener("click", () => openLightbox(i-1));
+      gallery.appendChild(btn);
+    }
+
+    // ====== Lightbox controls ======
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lbImg");
+    const lbTitle = document.getElementById("lbTitle");
+    const lbClose = document.getElementById("lbClose");
+    const lbPrev = document.getElementById("lbPrev");
+    const lbNext = document.getElementById("lbNext");
+    let currentIndex = 0;
+
+    function openLightbox(index){
+      currentIndex = index;
+      renderLightbox();
+      lb.classList.add("open");
+      lb.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox(){
+      lb.classList.remove("open");
+      lb.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    function renderLightbox(){
+      const src = slides[currentIndex];
+      lbImg.src = src;
+      lbTitle.textContent = `Slide ${currentIndex + 1} of ${slides.length}`;
+    }
+
+    function prevSlide(){
+      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+      renderLightbox();
+    }
+    function nextSlide(){
+      currentIndex = (currentIndex + 1) % slides.length;
+      renderLightbox();
+    }
+
+    lbClose.addEventListener("click", closeLightbox);
+    lbPrev.addEventListener("click", prevSlide);
+    lbNext.addEventListener("click", nextSlide);
+
+    lb.addEventListener("click", (e) => {
+      if(e.target === lb) closeLightbox();
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if(!lb.classList.contains("open")) return;
+      if(e.key === "Escape") closeLightbox();
+      if(e.key === "ArrowLeft") prevSlide();
+      if(e.key === "ArrowRight") nextSlide();
+    });
+
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
