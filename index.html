@@ -510,98 +510,94 @@
       </div>
     </div>
   </div>
+<script>
+  // ====== Configure your slide images here ======
+  const SLIDE_COUNT = 17;
+  const SLIDE_PREFIX = "CNR Korea website 2/슬라이드";
+  const SLIDE_EXT = ".PNG";
 
-  <script>
-    // ====== Configure your slide images here ======
-    // Put files in /assets/ named slide-01.png ... slide-17.png
-    const SLIDE_COUNT = 17;
-    const SLIDE_PREFIX = "assets/slide-";
-    const SLIDE_EXT = ".png";
+  // ====== Build gallery ======
+  const gallery = document.getElementById("gallery");
+  const slides = [];
 
-    // ====== Build gallery ======
-    const gallery = document.getElementById("gallery");
-    const slides = [];
+  for(let i=1; i<=SLIDE_COUNT; i++){
+    const src = `${SLIDE_PREFIX}${i}${SLIDE_EXT}`;
+    slides.push(src);
 
-    function pad2(n){ return String(n).padStart(2, "0"); }
+    const btn = document.createElement("button");
+    btn.className = "thumb";
+    btn.type = "button";
+    btn.setAttribute("aria-label", `Open slide ${i}`);
+    btn.dataset.index = String(i-1);
 
-    for(let i=1; i<=SLIDE_COUNT; i++){
-      const src = `${SLIDE_PREFIX}${pad2(i)}${SLIDE_EXT}`;
-      slides.push(src);
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = `Slide ${i}`;
 
-      const btn = document.createElement("button");
-      btn.className = "thumb";
-      btn.type = "button";
-      btn.setAttribute("aria-label", `Open slide ${i}`);
-      btn.dataset.index = String(i-1);
+    const badge = document.createElement("span");
+    badge.textContent = `Slide ${i}`;
 
-      const img = document.createElement("img");
-      img.src = src;
-      img.alt = `Slide ${i}`;
+    btn.appendChild(img);
+    btn.appendChild(badge);
+    btn.addEventListener("click", () => openLightbox(i-1));
+    gallery.appendChild(btn);
+  }
 
-      const badge = document.createElement("span");
-      badge.textContent = `Slide ${i}`;
+  // ====== Lightbox controls ======
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lbImg");
+  const lbTitle = document.getElementById("lbTitle");
+  const lbClose = document.getElementById("lbClose");
+  const lbPrev = document.getElementById("lbPrev");
+  const lbNext = document.getElementById("lbNext");
+  let currentIndex = 0;
 
-      btn.appendChild(img);
-      btn.appendChild(badge);
-      btn.addEventListener("click", () => openLightbox(i-1));
-      gallery.appendChild(btn);
-    }
+  function openLightbox(index){
+    currentIndex = index;
+    renderLightbox();
+    lb.classList.add("open");
+    lb.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
 
-    // ====== Lightbox controls ======
-    const lb = document.getElementById("lightbox");
-    const lbImg = document.getElementById("lbImg");
-    const lbTitle = document.getElementById("lbTitle");
-    const lbClose = document.getElementById("lbClose");
-    const lbPrev = document.getElementById("lbPrev");
-    const lbNext = document.getElementById("lbNext");
-    let currentIndex = 0;
+  function closeLightbox(){
+    lb.classList.remove("open");
+    lb.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
 
-    function openLightbox(index){
-      currentIndex = index;
-      renderLightbox();
-      lb.classList.add("open");
-      lb.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    }
+  function renderLightbox(){
+    const src = slides[currentIndex];
+    lbImg.src = src;
+    lbTitle.textContent = `Slide ${currentIndex + 1} of ${slides.length}`;
+  }
 
-    function closeLightbox(){
-      lb.classList.remove("open");
-      lb.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    }
+  function prevSlide(){
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    renderLightbox();
+  }
+  function nextSlide(){
+    currentIndex = (currentIndex + 1) % slides.length;
+    renderLightbox();
+  }
 
-    function renderLightbox(){
-      const src = slides[currentIndex];
-      lbImg.src = src;
-      lbTitle.textContent = `Slide ${currentIndex + 1} of ${slides.length}`;
-    }
+  lbClose.addEventListener("click", closeLightbox);
+  lbPrev.addEventListener("click", prevSlide);
+  lbNext.addEventListener("click", nextSlide);
 
-    function prevSlide(){
-      currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-      renderLightbox();
-    }
-    function nextSlide(){
-      currentIndex = (currentIndex + 1) % slides.length;
-      renderLightbox();
-    }
+  lb.addEventListener("click", (e) => {
+    if(e.target === lb) closeLightbox();
+  });
 
-    lbClose.addEventListener("click", closeLightbox);
-    lbPrev.addEventListener("click", prevSlide);
-    lbNext.addEventListener("click", nextSlide);
+  window.addEventListener("keydown", (e) => {
+    if(!lb.classList.contains("open")) return;
+    if(e.key === "Escape") closeLightbox();
+    if(e.key === "ArrowLeft") prevSlide();
+    if(e.key === "ArrowRight") nextSlide();
+  });
 
-    lb.addEventListener("click", (e) => {
-      if(e.target === lb) closeLightbox();
-    });
-
-    window.addEventListener("keydown", (e) => {
-      if(!lb.classList.contains("open")) return;
-      if(e.key === "Escape") closeLightbox();
-      if(e.key === "ArrowLeft") prevSlide();
-      if(e.key === "ArrowRight") nextSlide();
-    });
-
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+  
 </body>
 </html>
