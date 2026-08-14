@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CNR Korea | 10 Future Environmental & Energy Technologies</title>
+  <meta name="description" content="CNR Korea technology portfolio: environmental, water, energy and carbon-neutral technologies." />
+  <style>
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #eef2f5;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2937;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid #d8dee6;
+      padding: 12px 20px;
+      text-align: center;
+    }
+
+    header strong {
+      font-size: 18px;
+    }
+
+    .wrap {
+      width: min(92vw, 1100px);
+      margin: 24px auto 48px;
+    }
+
+    .slide-card {
+      margin: 0 0 26px;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.10);
+    }
+
+    .slide-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .caption {
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #6b7280;
+      text-align: right;
+      background: #fff;
+    }
+
+    .error-note {
+      display: none;
+      width: min(92vw, 1100px);
+      margin: 20px auto;
+      padding: 18px;
+      text-align: center;
+      color: #b00020;
+      background: #fff3f3;
+      border: 1px solid #f1b5b5;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 700px) {
+      header strong { font-size: 15px; }
+      .wrap { width: 96vw; margin-top: 12px; }
+      .slide-card { margin-bottom: 14px; border-radius: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>CNR KOREA · 10 Future Environmental & Energy Technologies</strong>
+  </header>
+
+  <div class="error-note" id="errorNote">
+    Some PNG images could not be loaded. Please check the GitHub folder and file names.
+  </div>
+
+  <main class="wrap" id="slides"></main>
+
+  <script>
+    const folder = "CNR_Korea website 2";
+    const container = document.getElementById("slides");
+    const errorNote = document.getElementById("errorNote");
+
+    for (let i = 1; i <= 17; i++) {
+      const card = document.createElement("section");
+      card.className = "slide-card";
+
+      const img = document.createElement("img");
+      img.src = folder + "/슬라이드" + i + ".PNG";
+      img.alt = "CNR Korea Website Slide " + i;
+      img.loading = i <= 2 ? "eager" : "lazy";
+      img.decoding = "async";
+
+      img.onerror = () => {
+        card.style.display = "none";
+        errorNote.style.display = "block";
+      };
+
+      const caption = document.createElement("div");
+      caption.className = "caption";
+      caption.textContent = i + " / 17";
+
+      card.appendChild(img);
+      card.appendChild(caption);
+      container.appendChild(card);
+    }
+  </script>
+</body>
+</html>
